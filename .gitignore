@@ -1,0 +1,12 @@
+*.gif
+.DS_Store
+/Manifest.toml
+/docs/Manifest.toml
+/docs/build/
+docs/build/
+docs/site/
+# SegRCDB.jl
+*.png
+param
+mask
+image
