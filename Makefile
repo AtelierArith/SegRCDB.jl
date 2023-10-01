@@ -13,7 +13,7 @@ build:
 
 dataset: build
 	docker compose run --rm shell julia --project=@. generate_params.jl
-	docker compose run --rm shell julia -t auto --project=@. generate_dataset.jl
+	docker compose run --rm shell julia --threads auto --project=@. generate_dataset.jl
 
 test: build
 	docker compose run --rm shell julia -e 'using Pkg; Pkg.activate("."); Pkg.test()'
