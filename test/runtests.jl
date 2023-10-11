@@ -4,12 +4,19 @@ using PythonCall
 using CondaPkg
 using StableRNGs
 
+using Aqua: Aqua
+using JET: JET
+
 CondaPkg.add_pip("noise")
 
 const pynoise = pyimport("noise")
 
 using SegRCDB
 using SegRCDB: pnoise1
+
+@testset Aqua.test_undefined_exports(SegRCDB)
+@testset Aqua.test_piracy(SegRCDB)
+@testset JET.test_package(SegRCDB)
 
 @testset "pnoise1" begin
     pynoise = pyimport("noise")
