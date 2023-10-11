@@ -19,6 +19,7 @@ TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 ToStruct = "43ec2cc1-0e50-5406-a854-b7ff8fdb8dad"
 
 [compat]
+ColorTypes = "0.11"
 FileIO = "1"
 ImageCore = "0.10"
 ToStruct = "0.2"
