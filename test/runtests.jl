@@ -15,7 +15,7 @@ using SegRCDB
 using SegRCDB: pnoise1
 
 @testset "Aqua" begin
-    Aqua.test_all(SegRCDB; deps_compat = false)
+    Aqua.test_all(SegRCDB; deps_compat = false, stale_deps=false)
 end
 
 @testset "JET" begin
