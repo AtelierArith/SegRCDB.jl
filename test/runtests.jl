@@ -14,9 +14,15 @@ const pynoise = pyimport("noise")
 using SegRCDB
 using SegRCDB: pnoise1
 
-@testset Aqua.test_undefined_exports(SegRCDB)
-@testset Aqua.test_piracy(SegRCDB)
-@testset JET.test_package(SegRCDB)
+@testset "Aqua" begin
+    Aqua.test_all(SegRCDB; deps_compat = false)
+end
+
+@testset "JET" begin
+    if VERSION ≥ v"1.10"
+        JET.test_package(TCI; target_defined_modules=true)
+    end
+end
 
 @testset "pnoise1" begin
     pynoise = pyimport("noise")
